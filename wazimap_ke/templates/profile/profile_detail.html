@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block profile_detail %}
+{% if demographics %}
 <article id="demographics" class="clearfix">
     <header class="section-contents">
         <h1>Demographics</h1>
@@ -37,7 +38,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if education %}
 <article id="education" class="clearfix">
     <header class="section-contents">
         <h1>Education</h1>
@@ -61,7 +64,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if employment %}
 <article id="employment" class="clearfix">
     <header class="section-contents">
         <h1>Employment</h1>
@@ -78,7 +83,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if households %}
 <article id="households" class="clearfix">
     <header class="section-contents">
         <h1>Households</h1>
@@ -121,8 +128,10 @@
 
     </div>
 </article>
+{% endif %}
 
 <hr>
+{% if contraceptive_use %}
 <article class="clearfix">
     <h2><a href="http://www.knbs.or.ke/index.php?option=com_content&view=article&id=308:2014-kenya-demographic-and-health-survey-2014-kdhs&catid=82:news&Itemid=593">KNBS Demographic and Health Survey Report 2014</a></h2>
 </article>
@@ -152,7 +161,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if maternal_care_indicators %}
 <article id="maternal-care-indicators" class="clearfix">
     <header class="section-contents">
         <h1>Maternal care indicators</h1>
@@ -183,7 +194,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if knowledge_of_hiv_prevention_methods %}
 <article id="knowledge_of_hiv_prevention_methods" class="clearfix">
     <header class="section-contents">
         <h1>Knowledge of HIV prevention</h1>
@@ -199,7 +212,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if itn %}
 <article id="ITN" class="clearfix">
     <header class="section-contents">
         <h1>Mosquito nets</h1>
@@ -223,7 +238,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if fertility %}
 <article id="fertility" class="clearfix">
     <header class="section-contents">
         <h1>Fertility</h1>
@@ -242,6 +259,9 @@
 
     </div>
 </article>
+{% endif %}
+
+{% if vaccinations %}
 <article id="vaccinations" class="clearfix">
     <header class="section-contents">
         <h1>Vaccinations</h1>
@@ -263,7 +283,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if type_treatment%}
 <article id="type-treatment" class="clearfix">
     <header class="section-contents">
         <h1>Treatment of childhood illness</h1>
@@ -287,7 +309,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if nutrition %}
 <article id="nutrition" class="clearfix">
     <header class="section-contents">
         <h1>Nutritional status of children</h1>
@@ -332,7 +356,9 @@
 
     </div>
 </article>
+{% endif %}
 
+{% if protests %}
 <article id="protests" class="clearfix">
      <header class="section-contents">
         <h1>Protests</h1>
@@ -346,7 +372,9 @@
         </section>
     </div>
 </article>
+{% endif %}
 
+{% if schoolfires %}
 <article id="schoolfires" class="clearfix">
      <header class="section-contents">
         <h1>School fires</h1>
@@ -368,6 +396,9 @@
         </section>
     </div>
 </article>
+{% endif %}
+
+{% if crimereport %}
 <article id="crimereport" class="clearfix">
      <header class="section-contents">
         <h1>Crime Statistics</h1>
@@ -384,7 +415,9 @@
         </section>
     </div>
 </article>
+{% endif %}
 
+{% if healthratios %}
 <article id="healthratios" class="clearfix">
      <header class="section-contents">
         <h1>Access to health services</h1>
@@ -402,4 +435,5 @@
         </section>
     </div>
 </article>
+{% endif %}
 {% endblock %}

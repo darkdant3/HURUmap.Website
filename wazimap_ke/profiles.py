@@ -28,6 +28,27 @@ PROFILE_SECTIONS = (
     'healthratios'
 )
 
+HEALTH_SECTIONS = (
+    'demographics',
+    'contraceptive_use',
+    'maternal_care_indicators',
+    'knowledge_of_hiv_prevention_methods',
+    'ITN',
+    'fertility',
+    'vaccinations',
+    'type_treatment',
+    'nutrition',
+    'healthratios'
+)
+
+EMPLOYMENT_SECTIONS = (
+    'employment',
+)
+
+EDUCATION_SECTIONS = (
+    'education',
+)
+
 EMPLOYMENT_RECODES = OrderedDict([
     ('seeking work / no work available', 'Seeking work'),
     ('employed', 'Employed'),
@@ -47,14 +68,16 @@ WATER_SOURCE_RECODES = OrderedDict([
 ])
 
 
-def get_census_profile(geo_code, geo_level, profile_name=None):
+def get_census_profile(geo_code, geo_level, profile_name=None, cat=None):
     session = get_session()
-
     try:
         geo_summary_levels = geo_data.get_summary_geo_info(geo_code, geo_level)
         data = {}
-
-        for section in PROFILE_SECTIONS:
+        SECTIONS = PROFILE_SECTIONS
+        if cat == 'health':SECTIONS = HEALTH_SECTIONS
+        if cat == 'education':SECTIONS = EDUCATION_SECTIONS
+        if cat == 'employment':SECTIONS = EMPLOYMENT_SECTIONS
+        for section in SECTIONS:
             function_name = 'get_%s_profile' % section
             if function_name in globals():
                 func = globals()[function_name]
@@ -67,8 +90,9 @@ def get_census_profile(geo_code, geo_level, profile_name=None):
 
         # tweaks to make the data nicer
         # show X largest groups on their own and group the rest as 'Other'
-        group_remainder(data['households']['roofing_material_distribution'], 5)
-        group_remainder(data['households']['wall_material_distribution'], 5)
+        if 'households' in SECTIONS:
+            group_remainder(data['households']['roofing_material_distribution'], 5)
+            group_remainder(data['households']['wall_material_distribution'], 5)
 
         return data
 
@@ -623,7 +647,6 @@ def get_crimereport_profile(geo_code, geo_level, session):
 
 def get_healthratios_profile(geo_code, geo_level, session):
     ratios_dist, _ = get_stat_data("healthratios", geo_level, geo_code, session)
-    print ratios_dist
     dr = ratios_dist['Doctor ratio']['numerators']['this']
     nr = ratios_dist['Nurse ratio']['numerators']['this']
     return {
