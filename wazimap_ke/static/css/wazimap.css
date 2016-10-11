@@ -45,8 +45,8 @@
     margin: 5px 3px 0px 0px;
 }
 #page-header-title .tool-group {
-  /**margin-left: 5px;**/
-  margin-left: 40px;
+    margin-left: 40px;
+    margin-top: 20px;
 }
 #page-header-title .tool-group a {
     font-size:18px;
