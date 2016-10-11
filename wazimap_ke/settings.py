@@ -17,7 +17,7 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # Localise this instance of Wazimap
 WAZIMAP['name'] = 'Wazimap Kenya'
-WAZIMAP['url'] = 'http://kenya.wazimap.org'
+WAZIMAP['url'] = 'http://kenya.wazimap.codeforafrica.org'
 WAZIMAP['country_code'] = 'KE'
 WAZIMAP['profile_builder'] = 'wazimap_ke.profiles.get_census_profile'
 WAZIMAP['levels'] = {
