@@ -6,7 +6,7 @@ from wazimap.data.utils import get_session, calculate_median, merge_dicts, get_s
 
 
 # ensure tables are loaded
-import wazimap_ke.tables  # noqa
+import wazimap_ken.tables  # noqa
 
 
 PROFILE_SECTIONS = (
