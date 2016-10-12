@@ -344,3 +344,14 @@ header.section-contents.table-explorer h1 a {
 #profile .content-container.wrapper {
     display:none;
 }
+.snippet {
+    text-align:center;
+    color:#084A49;
+    font-size:17px;
+    padding:20px;
+}
+.filter-row-desc {
+    color:#084A49;
+    padding-left:20px;
+    font-size:17px;
+}
