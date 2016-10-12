@@ -81,6 +81,42 @@
 {% endblock %}
 
 {% block content %}
+<section class="filters">
+    <div class="filter-row">
+        <a herf="#"><i>Filter results</i></a>
+        <a herf="#" class="hide-filters"><i>Hide filters</i></a>
+    </div>
+    <div class="filter-row">
+        <i class="fa fa-users"></i>  Census 2009
+        <span class="end">+</span>
+    </div>
+    <br>
+    <div class="filter-row-sub">
+        <span>All</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub">
+        <span>HIV</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub">
+        <span>Maternal Care</span>
+        <div class="box-unchecked"></div>
+    </div>
+    <div class="filter-row">
+        <i class="fa fa-medkit"></i>  Health
+        <span class="end">+</span>
+    </div>
+    <div class="filter-row">
+        <i class="fa fa-graduation-cap"></i>  Education
+        <span class="end">+</span>
+    </div>
+    <div class="filter-row">
+        <i class="fa fa-briefcase"></i>  Employment
+        <span class="end">+</span>
+    </div>
+
+</section>
 {% comment %}
 <section class="clearfix" id="query-topic-picker">
     <h2>Find data for this place</h2>
@@ -141,7 +177,14 @@
 <script src="{% static 'js/maps_static.js' %}"></script>
 <script src="{% static 'js/profile_map.js' %}"></script>
 {% endblock %}
-
+<script>
+     w = $( window ).width() - $( '.content-container.wrapper' ).width() - 380
+     w = Math.round(w/2)
+     $('.content-container.wrapper').css('margin-left', (w + 380) + 'px')
+     $('.filters').css('margin-left', w + 'px')
+     $('.filters').css('display', 'block')
+     $('.wrapper').css('display', 'block')
+</script>
 <script type="text/javascript">
 
 // Create all the charts
@@ -278,6 +321,5 @@ if (!!parentLinkContainer) {
             $('body').trigger('glossaryUpdate', parentLinkContainer);
         });
 }
-
 </script>
 {% endblock %}

@@ -238,7 +238,7 @@ header.section-contents.table-explorer h1 a {
     color: #fff;
     background-color: #D75550;
     margin: 0 auto;
-    padding:7px;
+    padding: 10px 20px;
     font-size:21px;
     border:none;
 }
@@ -270,6 +270,7 @@ header.section-contents.table-explorer h1 a {
 #suggestdata .shell {
     border: 3px solid #084A49;
     padding:20px 30px;
+    width: 55%;
 }
 #suggestdata p {
     text-align:center;
@@ -288,4 +289,58 @@ header.section-contents.table-explorer h1 a {
 .profiles-container {
     /**height:600px;
     overflow-y:scroll;**/
+}
+.filters {
+    position: absolute;
+    left: 0;
+    top:700px;
+    padding: 10px 20px;
+    height:50px;
+    width:380px;
+    display:none;
+}
+.filter-row {
+    background-color: #f0f0f0;
+    color: #084A49;
+    font-size:17px;
+    margin-top:5px;
+    line-height:50px;
+    padding-left: 10px;
+}
+.filter-row .top {
+    font-weight:italic;
+}
+.filter-row .end {
+    background-color:#D75550;
+    color: #fff;
+    float:right;
+    width:50px;
+    text-align:center;
+    font-size:17px;
+}
+.filter-row .hide-filters {
+    color:#D75550;
+    float:right;
+    padding-right:10px;
+}
+.filter-row-sub {
+    height: 30px;
+    line-height:30px;
+    color: #084A49;
+    padding-left:30px;
+}
+.filter-row-sub .box-checked {
+    height:20px;
+    background-color:#D75550;
+    width:20px;
+    float:right;
+}
+.filter-row-sub .box-unchecked {
+    height:20px;
+    border: 4px solid #084A49;
+    width:20px;
+    float:right;
+}
+#profile .content-container.wrapper {
+    display:none;
 }
