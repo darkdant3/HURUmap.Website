@@ -629,8 +629,18 @@ aside#facets {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    border: 1px solid #02aeab;
     padding: .67em 1.25em .33em;
+    color: #084A49;
+}
+#cover-profile article .value, #cover-profile article .name {
+    color:#084A49 !important;
+}
+#cover-profile article a {
+    color:#D75550;
+    text-decoration:none;
+}
+#cover-profile article a:hover {
+    text-decoration:underline;
 }
 #cover-profile ul {
     list-style: none;
@@ -745,7 +755,6 @@ h1.article-header-right {
 #compare-place-picker input {
     font-size: 1.6em;
     padding: .25em .5em 0;
-    width: 100%;
 }
 .big-action .with-submit input[type="text"] {
     width: 88%;
@@ -2320,7 +2329,8 @@ dl#racial-iteration dt {
 .twitter-typeahead,
 .twitter-typeahead .tt-query,
 .twitter-typeahead .tt-hint {
-    width: 100%;
+    /**width: 100%;**/
+    display: block !important;
 }
 
 .tt-dataset-always .result-name {
@@ -2350,12 +2360,26 @@ dl#racial-iteration dt {
 }
 #profile #compare-place-picker .typeahead-container {
     width: 100%;
-    padding-left: 16em;
 }
 #query-topic-picker #topic-select,
 #topic-picker #topic-select,
 #compare-place-picker #compare-place-select {
-    width: 100%;
+    height: 40px;
+    color:#084A49;
+    background-color: #f0f0f0;
+    border: none;
+    width: 400px;
+    float: left;
+    border-radius: 0px;
+    line-height: 40px;
+}
+#compare-place-picker button {
+    float:left;
+    color: #fff;
+    background-color:#D75550;
+    padding:11px;
+    border:none;
+    margin-left:5px;
 }
 aside .search .tt-dropdown-menu {
     font-size: .75em;

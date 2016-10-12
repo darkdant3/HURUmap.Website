@@ -1,4 +1,4 @@
-{% extends 'profile/profile_detail.html' %}
+{% extends 'profile/wazimap_profile_detail.html' %}
 
 {% block profile_header_tail %}
     <div class="column-full">
@@ -10,7 +10,7 @@
 {% if demographics %}
 <article id="demographics" class="clearfix">
     <header class="section-contents">
-        <h1>Demographics</h1>
+        <h1><i class="fa fa-users"></i> Demographics</h1>
     </header>
     <div class="section-container">
 
@@ -43,7 +43,7 @@
 {% if education %}
 <article id="education" class="clearfix">
     <header class="section-contents">
-        <h1>Education</h1>
+        <h1><i class="fa fa-users"></i> Education</h1>
     </header>
     <div class="section-container">
 
@@ -69,7 +69,7 @@
 {% if employment %}
 <article id="employment" class="clearfix">
     <header class="section-contents">
-        <h1>Employment</h1>
+        <h1> <i class="fa fa-users"></i>Employment</h1>
     </header>
     <div class="section-container">
 
@@ -467,14 +467,6 @@
                 <small>Source: <a href="http://www.internationalbudget.org/wp-content/uploads/IBP-Budget-Brief-18B-Final.pdf">International Budget Partnership</a></small>
             </div>
         </section>
-    </div>
-</article>
-
-<!-- suggest a dataset section -->
-<article id="suggestdata" class="clearfix">
-    <div class="shell">
-        <p>Can't find the data you are looking for or would like to suggest some data to the site?</p>
-        <center><button>Suggest Data</button></center>
     </div>
 </article>
 {% endif %}
