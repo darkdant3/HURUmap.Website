@@ -70,7 +70,7 @@
                         <div class="tool-group">
                             <a href="#">Contact</a>
                         </div>
-                        <div class="tool-group" style="margin-top: 5px;">
+                        <div class="tool-group search-section">
                             <input name="geography_select" id="geography-select" type="text" value="Search for a place in Kenya" autocomplete="off" style=" height: 35px;border-radius: 0px;color: #084A49;font-size:16px;">
                         </div>
                         {% if not hide_nav_compare %}
@@ -105,6 +105,26 @@
             {% block content %}{% endblock %}
         </div>
         {% endblock %}
+
+
+        <div class="content-container clearfix partners">
+            <article class="clearfix wrapper">
+                <section>
+                    <div class="column-quarter callout with-icon" style="width:15%;float:left;">
+                        <p style="margin-top:30px;">Supported by :</p>
+                    </div>
+                    <div class="callout with-icon" style="width:18%;float:left;">
+                        <img src="{% static 'img/cfafrica-logo.png' %}" style="height:80px;">
+                    </div>
+                    <div class="callout with-icon" style="width:31%;float:left;">
+                        <img src="{% static 'img/icfj-logo.png' %}" style="height:80px;">
+                    </div>
+                    <div class="callout with-icon" style="width:18%;float:left;">
+                        <img src="{% static 'img/mma.png' %}" style="height:60px;">
+                    </div>
+                </section>
+            </article>
+        </div>
 
         <footer id="page-footer">
             <section class="wrapper footer-container clearfix">

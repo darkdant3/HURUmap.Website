@@ -204,7 +204,7 @@ header.section-contents.table-explorer h1 a {
 }
 .topics i {
     color: #084A49;
-    font-size: 100px;
+    font-size: 80px;
 }
 
 .topics .topic-name {
@@ -249,7 +249,7 @@ header.section-contents.table-explorer h1 a {
     height:70px;
 }
 .partners {
-    background: #f4f4f4;
+    background: #f0f0f0;
 }
 #page-footer .column-third {
     padding-left:30px;
@@ -263,4 +263,25 @@ header.section-contents.table-explorer h1 a {
     height: 35px;
     border-radius: 0px;
     color: #084A49;
+}
+.search-section {
+    margin-top: 10px;
+}
+#suggestdata .shell {
+    border: 3px solid #084A49;
+    padding:20px 30px;
+}
+#suggestdata p {
+    text-align:center;
+    font-size:18px;
+    color: #084A49;
+    font-family: 'Lato' , sans-serif;
+}
+#suggestdata button {
+    color: #fff;
+    background-color: #084A49;
+    font-size: 21px;
+    padding: 10px;
+    border: none;
+    font-family: 'Lato' , sans-serif;
 }
