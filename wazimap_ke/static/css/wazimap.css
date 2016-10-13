@@ -207,7 +207,7 @@ header.section-contents.table-explorer h1 a {
     font-size: 80px;
 }
 
-.topics .topic-name {
+.topic-name {
     background: #084A49;
     color:#fff;
     text-transform:uppercase;
@@ -354,4 +354,61 @@ header.section-contents.table-explorer h1 a {
     color:#084A49;
     padding-left:20px;
     font-size:17px;
+}
+#compare-search-icon {
+   position: absolute;
+   top: 24px;
+   left: 7px;
+   font-size: 15px;
+}
+.g_HR {
+    color: #fff !important;
+    background-color:#084A49 !important;
+    padding:5px 10px !important;
+}
+.g_C, .g_C a, .g_R0 {
+    color: #fff !important;
+    font-style: normal !important;
+}
+.g_BR {
+    color:#084A49 !important;
+}
+h2.table-title {
+    color: #084A49;
+    font-weight: normal;
+}
+.header-for-columns {
+    color: #084A49;
+}
+.data-view a {
+    font-style: italic;
+    color:#D75550;
+}
+#data-view-toggles a, #page-footer a {
+    font-style: normal;
+    color:#fff;
+}
+#geography-add {
+    height: 40px;
+    color: #084A49;
+    background-color: #f0f0f0;
+    border: none;
+    float: left;
+    border-radius: 0px;
+    line-height: 40px;
+}
+.title {
+    text-align:center;
+}
+.topics-topic {
+    text-align:center;
+}
+.topics-topic i {
+    font-size:80px;;
+}
+.topics-topic ul {
+    list-style:none;
+}
+.topic-desc, .categories {
+    margin-top:10px;
 }

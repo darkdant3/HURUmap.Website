@@ -22,6 +22,7 @@ body {
     line-height: 1.4;
     font-size: 14px;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:  #084A49;
 }
 html {
     background-color: #e0e4d4;
@@ -89,7 +90,9 @@ a {
 }
 a.permalink {
     text-decoration: none;
-    color: inherit;
+    color: #084A49 !important;
+    font-style:normal !important;
+    text-transform:uppercase;
 }
 a:hover {
     color: #02aeab;
@@ -495,7 +498,7 @@ aside h3 {
 }
 aside p,
 aside ul {
-    font-size: .83em;
+    font-size: 14px;
 }
 aside ul {
     margin: .33em .67em .67em 1em;
@@ -1174,7 +1177,28 @@ h1.article-header-right {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     padding: .83em 1em;
 }
-
+.leaflet-label  {
+    background-color:#D75550 !important;
+    border:none !important;
+    color:#fff !important;
+    padding: 10px !important;
+    border-radius:0px !important;
+    margin: 0px -10px !important;
+}
+.leaflet-label:after , .leaflet-label:before{
+    color: #D75550;
+    margin:0px;
+    margin-top:10px;
+    /**padding:10px 0px 0px 0px;**/
+}
+.leaflet-label:before {
+    margin-right:-5px !important;
+    padding-right:-5px !important;
+}
+.leaflet-label:after {
+    margin-left:-5px !important;
+    padding-left:-5px !important;
+}
 
 ul.quantile-legend {
     list-style: none;
@@ -1477,9 +1501,6 @@ textarea#results {
 }
 
 .tool-set {
-    float: right;
-    padding-top: .1em;
-    margin: -.1em 0 .5em 1.5em;
 }
 .tool-set.caption-tool-set {
     margin-top: .1em;
@@ -1515,6 +1536,7 @@ textarea#results {
 .tool-group a {
     cursor: pointer;
     text-decoration: underline;
+    font-style:normal !important;
 }
 .tool-group a:hover {
     color: #f55b2c;
@@ -1602,19 +1624,19 @@ ul.toggle-set li {
     position: relative;
 }
 .toggle-set a {
-    background-color: #a1d0c6;
-    border-bottom: 1px solid #67b3a3;
     text-decoration: none;
-    color: #888;
     margin-right: 1px;
+    background-color: #084A49;;
+    color: #fff;
 }
 .toggle-set a,
 .toggle-sub-group a {
-    padding: .25em 0 .33em;
-    display: block;
+    padding: 10px 25px;
+    display: inline-block;
 }
 .toggle-sub-group a {
     margin-top: .15em;
+    color:#D75550;
 }
 .toggle-set li:first-child a {
     -webkit-border-top-left-radius: 4px;
@@ -1636,12 +1658,12 @@ ul.toggle-set li {
 .toggle-set a.active,
 .toggle-set a:hover,
 .toggle-set a.hovered {
-    background-color: #1a9d95;
+    background-color: #D75550;;
     color: #fff;
 }
 .toggle-set a.unhovered {
-    background-color: #a1d0c6;
-    color: #888;
+    background-color: #084A49;;
+    color: #fff;
 }
 ul.toggle-set .toggle-sub-group a:hover {
     -webkit-border-bottom-right-radius: 0;

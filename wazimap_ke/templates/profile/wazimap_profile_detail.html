@@ -129,8 +129,7 @@
 {% block profile_preamble %}
 <section class="clearfix" id="compare-place-picker">
     <div class="typeahead-container">
-        <input name="place_select" id="compare-place-select" type="text" value="Compare this with another place" autocomplete="off">
-        <button>GO</button>
+        <input name="place_select" id="compare-place-select" type="text" value="" autocomplete="off"/>
     </div>
 </section>
 
@@ -144,7 +143,6 @@
         <h1>Example</h1>
     </header>
     <div class="section-container">
-
         <section class="clearfix stat-row">
             <h2 class="header-for-columns"><a class="permalink" href="#here" id="here">Your stats go here <i class="fa fa-link"></i></a></h2>
         </section>
@@ -156,12 +154,14 @@
 
 <br clear="all">
 <!-- suggest a dataset section -->
-<article id="suggestdata" class="clearfix">
-    <div class="shell">
-        <p>Can't find the data you are looking for or would like to suggest some data to the site?</p>
-        <center><button>Suggest Data</button></center>
-    </div>
-</article>
+<center>
+    <article id="suggestdata" class="clearfix">
+        <div class="shell">
+            <p>Can't find the data you are looking for or would like to suggest some data to the site?</p>
+            <center><button>Suggest Data</button></center>
+        </div>
+    </article>
+</center>
 {% endblock content %}
 
 
@@ -178,12 +178,16 @@
 <script src="{% static 'js/profile_map.js' %}"></script>
 {% endblock %}
 <script>
-     w = $( window ).width() - $( '.content-container.wrapper' ).width() - 380
-     w = Math.round(w/2)
-     $('.content-container.wrapper').css('margin-left', (w + 380) + 'px')
-     $('.filters').css('margin-left', w + 'px')
-     $('.filters').css('display', 'block')
-     $('.wrapper').css('display', 'block')
+     w = $( window ).width() - $( '.content-container.wrapper' ).width() - 380;
+     w = Math.round(w/2);
+     $('.content-container.wrapper').css('margin-left', (w + 380) + 'px');
+     $('.filters').css('margin-left', w + 'px');
+     $('.filters').css('display', 'block');
+     $('.wrapper').css('display', 'block');
+     $('#compare-place-select').val('Compare this with another place')
+     $('#compare-place-select').focus(function() {
+        $(this).val('')
+     });
 </script>
 <script type="text/javascript">
 

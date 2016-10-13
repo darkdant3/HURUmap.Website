@@ -1,0 +1,45 @@
+{% extends '_base.html' %}{% load humanize partition staticfiles %}
+
+{% block content_container %}
+
+<div class="content-container clearfix">
+    <section>
+        <article class="clearfix wrapper">
+            <h1 class="title">Getting Started</h1>
+            <div class="snippet">
+                The Census is a big subject and there's a lot to learn, but you don't have to learn it all at once.<br>
+                Here's some help knowing the lay of the land.
+            </div>
+            <br clear="all">
+            <div class="filter-row">
+                <span>What is the Census?</span>
+                <span class="end">-</span>
+            </div>
+            <br clear="all">
+            <div class="filter-row-desc">
+                Wazimap is a tool aimed at helping journalists to add context and depth to stories. With newsroom budgets shrinking and journalists under increasing pressure to deliver stories most of the news on offer tends to be event based, personality-driven and ignores the bigger issues that concerns citizens. Wazimap will help journalists easily and quickly access reliable and factual information to back up and give context to their stories. WAZImap will help them focus on how to make better use of data and explore data journalism stories.
+
+                Wazimap takes data from the Kenya National Bureau of Statistics (KNBS) and turns it into a mobile-friendly website with simple data visualisations of county/city/district level data on key demographic issues. These data visualisations are embeddable so that journalists can use them in their stories and you can access/download the data yourself too. Wazimap also allows you to compare any two areas side-by-side to see what the data reveals about those areas.
+
+                Journalists can also take advantage of Wazimap by using its built-in location detection to learn more about any area that they are reporting on.
+
+                Wazimap, derived from the Xhosa word ulwazi for knowledge, is a joint project by Media Monitoring Africa and Code for South Africa that provides easy access to South African census and elections data.
+            </div>
+            <br clear="all">
+            <div class="filter-row">
+                <span>OK then, what's in the ACS?</span>
+                <span class="end">+</span>
+            </div>
+            <div class="filter-row">
+                <span>When is the ACS updated?</span>
+                <span class="end">+</span>
+            </div>
+            <div class="filter-row">
+                <span>Embedding WAZIMAP profile charts</span>
+                <span class="end">+</span>
+            </div>
+        </article>
+    </section>
+</div>
+
+{% endblock content_container %}
