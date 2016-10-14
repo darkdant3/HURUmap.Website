@@ -11,12 +11,11 @@
                 Here's some help knowing the lay of the land.
             </div>
             <br clear="all">
-            <div class="filter-row">
+            <div class="filter-row" data-filter="one">
                 <span>What is the Census?</span>
                 <span class="end">-</span>
             </div>
-            <br clear="all">
-            <div class="filter-row-desc">
+            <div class="filter-row-desc filter-row-sub one-sub" style="display:inline-block;">
                 Wazimap is a tool aimed at helping journalists to add context and depth to stories. With newsroom budgets shrinking and journalists under increasing pressure to deliver stories most of the news on offer tends to be event based, personality-driven and ignores the bigger issues that concerns citizens. Wazimap will help journalists easily and quickly access reliable and factual information to back up and give context to their stories. WAZImap will help them focus on how to make better use of data and explore data journalism stories.
 
                 Wazimap takes data from the Kenya National Bureau of Statistics (KNBS) and turns it into a mobile-friendly website with simple data visualisations of county/city/district level data on key demographic issues. These data visualisations are embeddable so that journalists can use them in their stories and you can access/download the data yourself too. Wazimap also allows you to compare any two areas side-by-side to see what the data reveals about those areas.
@@ -25,21 +24,69 @@
 
                 Wazimap, derived from the Xhosa word ulwazi for knowledge, is a joint project by Media Monitoring Africa and Code for South Africa that provides easy access to South African census and elections data.
             </div>
-            <br clear="all">
-            <div class="filter-row">
+            <div class="filter-row" data-filter="two">
                 <span>OK then, what's in the ACS?</span>
                 <span class="end">+</span>
             </div>
-            <div class="filter-row">
+            <div class="filter-row-desc filter-row-sub two-sub">
+                Wazimap is a tool aimed at helping journalists to add context and depth to stories. With newsroom budgets shrinking and journalists under increasing pressure to deliver stories most of the news on offer tends to be event based, personality-driven and ignores the bigger issues that concerns citizens. Wazimap will help journalists easily and quickly access reliable and factual information to back up and give context to their stories. WAZImap will help them focus on how to make better use of data and explore data journalism stories.
+
+                Wazimap takes data from the Kenya National Bureau of Statistics (KNBS) and turns it into a mobile-friendly website with simple data visualisations of county/city/district level data on key demographic issues. These data visualisations are embeddable so that journalists can use them in their stories and you can access/download the data yourself too. Wazimap also allows you to compare any two areas side-by-side to see what the data reveals about those areas.
+
+                Journalists can also take advantage of Wazimap by using its built-in location detection to learn more about any area that they are reporting on.
+
+                Wazimap, derived from the Xhosa word ulwazi for knowledge, is a joint project by Media Monitoring Africa and Code for South Africa that provides easy access to South African census and elections data.
+            </div>
+            <div class="filter-row" data-filter="three">
                 <span>When is the ACS updated?</span>
                 <span class="end">+</span>
             </div>
-            <div class="filter-row">
+            <div class="filter-row-desc filter-row-sub three-sub">
+                Wazimap is a tool aimed at helping journalists to add context and depth to stories. With newsroom budgets shrinking and journalists under increasing pressure to deliver stories most of the news on offer tends to be event based, personality-driven and ignores the bigger issues that concerns citizens. Wazimap will help journalists easily and quickly access reliable and factual information to back up and give context to their stories. WAZImap will help them focus on how to make better use of data and explore data journalism stories.
+
+                Wazimap takes data from the Kenya National Bureau of Statistics (KNBS) and turns it into a mobile-friendly website with simple data visualisations of county/city/district level data on key demographic issues. These data visualisations are embeddable so that journalists can use them in their stories and you can access/download the data yourself too. Wazimap also allows you to compare any two areas side-by-side to see what the data reveals about those areas.
+
+                Journalists can also take advantage of Wazimap by using its built-in location detection to learn more about any area that they are reporting on.
+
+                Wazimap, derived from the Xhosa word ulwazi for knowledge, is a joint project by Media Monitoring Africa and Code for South Africa that provides easy access to South African census and elections data.
+            </div>
+            <div class="filter-row" data-filter="four">
                 <span>Embedding WAZIMAP profile charts</span>
                 <span class="end">+</span>
+            </div>
+            <div class="filter-row-desc filter-row-sub four-sub">
+                Wazimap is a tool aimed at helping journalists to add context and depth to stories. With newsroom budgets shrinking and journalists under increasing pressure to deliver stories most of the news on offer tends to be event based, personality-driven and ignores the bigger issues that concerns citizens. Wazimap will help journalists easily and quickly access reliable and factual information to back up and give context to their stories. WAZImap will help them focus on how to make better use of data and explore data journalism stories.
+
+                Wazimap takes data from the Kenya National Bureau of Statistics (KNBS) and turns it into a mobile-friendly website with simple data visualisations of county/city/district level data on key demographic issues. These data visualisations are embeddable so that journalists can use them in their stories and you can access/download the data yourself too. Wazimap also allows you to compare any two areas side-by-side to see what the data reveals about those areas.
+
+                Journalists can also take advantage of Wazimap by using its built-in location detection to learn more about any area that they are reporting on.
+
+                Wazimap, derived from the Xhosa word ulwazi for knowledge, is a joint project by Media Monitoring Africa and Code for South Africa that provides easy access to South African census and elections data.
             </div>
         </article>
     </section>
 </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript">
+    //Toogle filters
+     function hide_categories(f) {
+        console.log('hide')
+        $('.' + f + '-sub').css('display', 'none')
+        $('[data-filter='+ f +'] .end').html('+')
+        $('[data-filter='+ f +']').click( function() { f = $(this).attr('data-filter'); $(this).unbind('click'); show_categories(f) });
+     }
+
+     function show_categories(f) {
+        console.log('show')
+        $('.' + f + '-sub').css('display', 'inline-block')
+        $('[data-filter='+ f +'] .end').html('-')
+        $('[data-filter='+ f +']').click( function() { f = $(this).attr('data-filter');$(this).unbind('click'); hide_categories(f) });
+     }
+     $('.filter-row').click(function() {
+        f = $(this).attr('data-filter')
+        $(this).unbind('click');
+        show_categories(f);
+    });
+</script>
 
 {% endblock content_container %}

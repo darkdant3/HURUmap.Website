@@ -73,7 +73,6 @@
 
 .data-drawer .tool-group {
     float: right;
-    margin-right: 0px;
 }
 
 .data-drawer h3.chart-title {
@@ -411,4 +410,10 @@ h2.table-title {
 }
 .topic-desc, .categories {
     margin-top:10px;
+}
+.filter-row-sub {
+    display:none;
+}
+.filter-row {
+    margin-bottom:10px;
 }

@@ -86,34 +86,65 @@
         <a herf="#"><i>Filter results</i></a>
         <a herf="#" class="hide-filters"><i>Hide filters</i></a>
     </div>
-    <div class="filter-row">
+    <div class="filter-row" data-filter="census">
         <i class="fa fa-users"></i>  Census 2009
         <span class="end">+</span>
     </div>
-    <br>
-    <div class="filter-row-sub">
+    <div class="filter-row-sub census-sub">
         <span>All</span>
         <div class="box-checked"></div>
     </div>
-    <div class="filter-row-sub">
+    <div class="filter-row-sub census-sub">
         <span>HIV</span>
         <div class="box-checked"></div>
     </div>
-    <div class="filter-row-sub">
+    <div class="filter-row-sub census-sub">
         <span>Maternal Care</span>
-        <div class="box-unchecked"></div>
+        <div class="box-checked"></div>
     </div>
-    <div class="filter-row">
+    <div class="filter-row" data-filter="health">
         <i class="fa fa-medkit"></i>  Health
         <span class="end">+</span>
     </div>
-    <div class="filter-row">
+    <div class="filter-row-sub health-sub">
+        <span>All</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub health-sub">
+        <span>HIV</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub health-sub">
+        <span>Maternal Care</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row" data-filter="education">
         <i class="fa fa-graduation-cap"></i>  Education
         <span class="end">+</span>
     </div>
-    <div class="filter-row">
+    <div class="filter-row-sub education-sub">
+        <span>All</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub education-sub">
+        <span>HIV</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub education-sub">
+        <span>Maternal Care</span>
+        <div class="box-unchecked"></div>
+    </div>
+    <div class="filter-row" data-filter="employment">
         <i class="fa fa-briefcase"></i>  Employment
         <span class="end">+</span>
+    </div>
+    <div class="filter-row-sub employment-sub">
+        <span>All</span>
+        <div class="box-checked"></div>
+    </div>
+    <div class="filter-row-sub employment-sub">
+        <span>HIV</span>
+        <div class="box-checked"></div>
     </div>
 
 </section>
@@ -188,6 +219,26 @@
      $('#compare-place-select').focus(function() {
         $(this).val('')
      });
+
+    //Toogle filters
+     function hide_categories(f) {
+        console.log('hide')
+        $('.' + f + '-sub').css('display', 'none')
+        $('[data-filter='+ f +'] .end').html('+')
+        $('[data-filter='+ f +']').click( function() { f = $(this).attr('data-filter'); $(this).off(); show_categories(f) });
+     }
+
+     function show_categories(f) {
+        console.log('show')
+        $('.' + f + '-sub').css('display', 'block')
+        $('[data-filter='+ f +'] .end').html('-')
+        $('[data-filter='+ f +']').click( function() { f = $(this).attr('data-filter');$(this).off(); hide_categories(f) });
+     }
+     $('.filter-row').click(function() {
+        f = $(this).attr('data-filter')
+        $(this).off()
+        show_categories(f);
+    });
 </script>
 <script type="text/javascript">
 
@@ -325,5 +376,25 @@ if (!!parentLinkContainer) {
             $('body').trigger('glossaryUpdate', parentLinkContainer);
         });
 }
+
+$('.box-checked').click(function(){
+    $(this).removeClass('box-checked')
+    $(this).addClass('box-unchecked')
+    $('.box-unchecked').click(function(){
+        $(this).removeClass('box-unchecked')
+        $(this).addClass('box-checked')
+    });
+});
+$('.box-unchecked').click(function(){
+    $(this).removeClass('box-unchecked')
+    $(this).addClass('box-checked')
+    $('.box-checked').click(function(){
+        $(this).removeClass('box-checked')
+        $(this).addClass('box-unchecked')
+    });
+});
+
+
+
 </script>
 {% endblock %}
