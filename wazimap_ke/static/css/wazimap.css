@@ -399,6 +399,9 @@ h2.table-title {
 .title {
     text-align:center;
 }
+#cover-profile .title {
+    text-align:left;
+}
 .topics-topic {
     text-align:center;
 }

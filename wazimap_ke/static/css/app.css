@@ -489,9 +489,10 @@ header.section-contents h1 a {
 
 aside {
     float: left;
-    margin-left: -14.4em;
-    width: 13em;
+    margin-left: -20.4em;
+    width: 20em;
     padding: .25em .67em .67em 1.1em;
+}
 }
 aside h3 {
     font-size: .9em;

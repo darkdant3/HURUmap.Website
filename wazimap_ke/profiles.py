@@ -8,47 +8,45 @@ from wazimap.data.utils import get_session, calculate_median, merge_dicts, get_s
 # ensure tables are loaded
 import wazimap_ke.tables  # noqa
 
-
-PROFILE_SECTIONS = (
-    'demographics',
-    'education',
-    'employment',
-     'households',
-    'contraceptive_use',
-    'maternal_care_indicators',
-    'knowledge_of_hiv_prevention_methods',
-    'ITN',
-    'fertility',
-    'vaccinations',
-    'type_treatment',
-    'nutrition',
-    'protests',
-    'schoolfires',
-    'crimereport',
-    'healthratios',
-    'voterregistration',
-)
-
-HEALTH_SECTIONS = (
-    'demographics',
-    'contraceptive_use',
-    'maternal_care_indicators',
-    'knowledge_of_hiv_prevention_methods',
-    'ITN',
-    'fertility',
-    'vaccinations',
-    'type_treatment',
-    'nutrition',
-    'healthratios'
-)
-
-EMPLOYMENT_SECTIONS = (
-    'employment',
-)
-
-EDUCATION_SECTIONS = (
-    'education',
-)
+SECTIONS = {
+    'census': {
+        'topic': 'census 2009',
+        'icon': 'fa-users',
+        'profiles': [
+            'demographics',
+            'voter registration',
+            'households',
+            'protests',
+            'school fires',
+            'crime report'
+        ]
+    },
+    'health': {
+        'topic': 'health',
+        'icon': 'fa-medkit',
+        'profiles': [
+            'contraceptive use',
+            'maternal care indicators',
+            'knowledge of hiv prevention methods',
+            'ITN',
+            'fertility',
+            'vaccinations',
+            'type treatment',
+            'nutrition',
+            'health ratios'
+        ]
+     },
+    'employment': {
+        'topic': 'employment',
+        'icon': 'fa-briefcase',
+        'profiles': ['employment'],
+    },
+    'education': {
+        'topic': 'education',
+        'icon': 'fa-graduation-cap',
+        'profiles': ['education'],
+    }
+}
 
 EMPLOYMENT_RECODES = OrderedDict([
     ('seeking work / no work available', 'Seeking work'),
@@ -68,18 +66,18 @@ WATER_SOURCE_RECODES = OrderedDict([
     ('other', 'Other'),
 ])
 
-def get_census_profile(geo_code, geo_level, profile_name=None, cat=None):
+def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
     session = get_session()
     try:
+        categories = get_params.get('topic').split(',')
         geo_summary_levels = geo_data.get_summary_geo_info(geo_code, geo_level)
         data = {}
-        SECTIONS = PROFILE_SECTIONS
-        if cat == 'health':SECTIONS = HEALTH_SECTIONS
-        if cat == 'education':SECTIONS = EDUCATION_SECTIONS
-        if cat == 'employment':SECTIONS = EMPLOYMENT_SECTIONS
-        for section in SECTIONS:
-            function_name = 'get_%s_profile' % section
-            print function_name
+        sections = []
+        for cat in categories:
+            sections.extend(SECTIONS[cat]['profiles'])
+
+        for section in sections:
+            function_name = 'get_%s_profile' % section.replace(' ', '_')
             if function_name in globals():
                 func = globals()[function_name]
                 data[section] = func(geo_code, geo_level, session)
@@ -91,9 +89,13 @@ def get_census_profile(geo_code, geo_level, profile_name=None, cat=None):
 
         # tweaks to make the data nicer
         # show X largest groups on their own and group the rest as 'Other'
-        if 'households' in SECTIONS:
+        if 'households' in sections:
             group_remainder(data['households']['roofing_material_distribution'], 5)
             group_remainder(data['households']['wall_material_distribution'], 5)
+
+        data['all_sections'] = SECTIONS
+        #data['selected_sections'] = sections
+        data['selected_topics'] = categories
 
         return data
 
@@ -615,7 +617,7 @@ def get_protests_profile(geo_code, geo_level, session):
         }
     }
 
-def get_schoolfires_profile(geo_code, geo_level, session):
+def get_school_fires_profile(geo_code, geo_level, session):
     school_fires_dist, number_of_school_fires = get_stat_data("schoolfires", geo_level, geo_code, session)
     schools = school_fires_dist[school_fires_dist.keys()[0]]['name'].replace(',', '<br>').replace('"','')
     return {
@@ -628,7 +630,7 @@ def get_schoolfires_profile(geo_code, geo_level, session):
         'schools': schools
     }
 
-def get_crimereport_profile(geo_code, geo_level, session):
+def get_crime_report_profile(geo_code, geo_level, session):
     stats_dist, s_ = get_stat_data("crimereport", geo_level, geo_code, session)
     crimes_dist,c_ = get_stat_data("typesofcrime", geo_level, geo_code, session)
     crimes = stats_dist['Crimes']['numerators']['this']
@@ -648,7 +650,7 @@ def get_crimereport_profile(geo_code, geo_level, session):
         'metadata': crimes_dist['metadata']
     }
 
-def get_healthratios_profile(geo_code, geo_level, session):
+def get_health_ratios_profile(geo_code, geo_level, session):
     ratios_dist, _ = get_stat_data("healthratios", geo_level, geo_code, session)
     dr = ratios_dist['Doctor ratio']['numerators']['this']
     nr = ratios_dist['Nurse ratio']['numerators']['this']
@@ -666,7 +668,7 @@ def get_healthratios_profile(geo_code, geo_level, session):
         'metdata': ratios_dist['metadata']
     }
 
-def get_voterregistration_profile(geo_code, geo_level, session):
+def get_voter_registration_profile(geo_code, geo_level, session):
     stats_dist, _ = get_stat_data("voterregistration", geo_level, geo_code, session)
     ids_issued = stats_dist['IDs issued']['numerators']['this']
     dead_with_ids = stats_dist['Dead with IDs']['numerators']['this']
@@ -722,8 +724,6 @@ def get_voterregistration_profile(geo_code, geo_level, session):
         },
         'metdata': stats_dist['metadata']
     }
-    print r
-    print '*' * 30
     return r;
 
 def get_dictionary(key_one, key_two, val):
