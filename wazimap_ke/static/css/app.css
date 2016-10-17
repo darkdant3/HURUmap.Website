@@ -20,8 +20,8 @@ body {
     /**background-color: #f7f8f3;**/
     background-color: #fff;
     line-height: 1.4;
-    font-size: 14px;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-family: "poppins", sans-serif;
     color:  #084A49;
 }
 html {
@@ -117,7 +117,6 @@ p, .serif {
     margin-top: .25em;
     padding-top: .25em;
     font-size: .83em;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .caption-group {
     margin-right: 1em;
@@ -125,7 +124,6 @@ p, .serif {
 
 .display-type,
 .leader {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .leader {
     font-weight: bold;
@@ -203,8 +201,7 @@ img.screenshot {
     height:100px;
 }
 #page-header .wrapper {
-    /**padding: .5em 0;**/
-    padding-top: 30px;
+    padding: 2.0em 0;
 }
 #page-header-title a,
 .box-header a {
@@ -313,7 +310,7 @@ a.action-button,
     border-top: 1px solid #084A49;
     padding: 1.5em 0 4.5em;
     color:#fff;
-    font-family: 'Lato', sans-serif;
+    font-size:14px;
 }
 #page-footer ul {
     margin: 0;
@@ -324,7 +321,6 @@ a.action-button,
     line-height: 2;
 }
 .content-container {
-    padding: 2em 0;
     clear: both;
 }
 .data-view .content-container {
@@ -690,7 +686,7 @@ aside#facets {
     width: 65%;
 }
 .column-quarter {
-    width: 25%;
+    width: 23%;
 }
 .column-fifth {
     width: 20%;
@@ -769,7 +765,6 @@ h1.article-header-right {
     display: inline-block;
     height: 2.6em;
     font-size: 1.3em;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #profile #query-topic-picker input,
@@ -882,7 +877,6 @@ h1.article-header-right {
 }
 .tag {
     text-transform: uppercase;
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
     color: #fff;
     font-size: .8em;
@@ -1175,7 +1169,6 @@ h1.article-header-right {
 }
 .leaflet-label.hovercard {
     font-size: 13px;
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     padding: .83em 1em;
 }
 .leaflet-label  {
@@ -1850,7 +1843,6 @@ section.chart-divider h2 {
 .change-button,
 .go-button,
 .action-button {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1;
     cursor: pointer;
     text-align: center;
@@ -2559,7 +2551,7 @@ blockquote {
 /* MEDIA QUERIES */
 @media only screen and (min-width: 1140px) {
     .wrapper {
-        width: 1120px;
+        width: 1140px;
         margin: 0 auto;
     }
 } /* END: @media only screen and (min-width: 1140px) */
@@ -2702,6 +2694,9 @@ blockquote {
     }
 } /* END: @media only screen and (max-width: 768px) */
 @media only screen and (max-width: 640px) {
+    .filters {
+        display:none;
+    }
     .tool-set {
         float: none;
         margin: .5em 0 1em;
@@ -2820,6 +2815,9 @@ blockquote {
     }
 } /* END: @media only screen and (max-width: 640px) */
 @media only screen and (max-width: 480px) {
+    .filters {
+        display:none;
+    }
     .column-third,
     .column-half .column-half,
     .column-quarter,
@@ -2905,4 +2903,12 @@ blockquote {
     h1.article-header {
         font-size: 2.2em;
     }
+    .filters {
+        display:none;
+    }
+}
+.showcase img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 200px;
 }

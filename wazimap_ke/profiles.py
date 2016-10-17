@@ -3,50 +3,13 @@ from collections import OrderedDict
 from wazimap.geo import geo_data
 from wazimap.data.tables import get_model_from_fields
 from wazimap.data.utils import get_session, calculate_median, merge_dicts, get_stat_data, get_objects_by_geo, group_remainder
+from django.conf import settings
 
 
 # ensure tables are loaded
 import wazimap_ke.tables  # noqa
 
-SECTIONS = {
-    'census': {
-        'topic': 'census 2009',
-        'icon': 'fa-users',
-        'profiles': [
-            'demographics',
-            'voter registration',
-            'households',
-            'protests',
-            'school fires',
-            'crime report'
-        ]
-    },
-    'health': {
-        'topic': 'health',
-        'icon': 'fa-medkit',
-        'profiles': [
-            'contraceptive use',
-            'maternal care indicators',
-            'knowledge of hiv prevention methods',
-            'ITN',
-            'fertility',
-            'vaccinations',
-            'type treatment',
-            'nutrition',
-            'health ratios'
-        ]
-     },
-    'employment': {
-        'topic': 'employment',
-        'icon': 'fa-briefcase',
-        'profiles': ['employment'],
-    },
-    'education': {
-        'topic': 'education',
-        'icon': 'fa-graduation-cap',
-        'profiles': ['education'],
-    }
-}
+SECTIONS = settings.WAZIMAP.get('topics', {})
 
 EMPLOYMENT_RECODES = OrderedDict([
     ('seeking work / no work available', 'Seeking work'),
@@ -69,12 +32,17 @@ WATER_SOURCE_RECODES = OrderedDict([
 def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
     session = get_session()
     try:
-        categories = get_params.get('topic').split(',')
         geo_summary_levels = geo_data.get_summary_geo_info(geo_code, geo_level)
         data = {}
         sections = []
-        for cat in categories:
-            sections.extend(SECTIONS[cat]['profiles'])
+        if get_params.get('topic'):
+            categories = get_params.get('topic').split(',')
+            for cat in categories:
+                sections.extend(SECTIONS[cat]['profiles'])
+            data['selected_topics'] = categories
+        else:
+            for cat in SECTIONS:
+                sections.extend(SECTIONS[cat]['profiles'])
 
         for section in sections:
             function_name = 'get_%s_profile' % section.replace(' ', '_')
@@ -95,7 +63,6 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
 
         data['all_sections'] = SECTIONS
         #data['selected_sections'] = sections
-        data['selected_topics'] = categories
 
         return data
 

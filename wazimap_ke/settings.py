@@ -16,7 +16,7 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Localise this instance of Wazimap
-WAZIMAP['name'] = 'Wazimap Kenya'
+WAZIMAP['name'] = 'WAZImap Kenya'
 WAZIMAP['url'] = 'http://kenya.wazimap.codeforafrica.org'
 WAZIMAP['country_code'] = 'KE'
 WAZIMAP['profile_builder'] = 'wazimap_ke.profiles.get_census_profile'
@@ -40,3 +40,47 @@ WAZIMAP['twitter'] = '@Code4Africa'
 
 WAZIMAP['map_centre'] = [0.3051933453207569, 37.908818734483155]
 WAZIMAP['map_zoom'] = 6
+
+WAZIMAP['topics'] = {
+    'census': {
+        'topic': 'census 2009',
+        'icon': 'fa-users',
+        'desc': '',
+        'profiles': [
+            'demographics',
+            'voter registration',
+            'households',
+            'protests',
+            'school fires',
+            'crime report'
+        ]
+    },
+    'health': {
+        'topic': 'health',
+        'icon': 'fa-medkit',
+        'desc': '',
+        'profiles': [
+            'contraceptive use',
+            'maternal care indicators',
+            'knowledge of hiv prevention methods',
+            'ITN',
+            'fertility',
+            'vaccinations',
+            'type treatment',
+            'nutrition',
+            'health ratios'
+        ]
+     },
+    'employment': {
+        'topic': 'employment',
+        'icon': 'fa-briefcase',
+        'desc': '',
+        'profiles': ['employment'],
+    },
+    'education': {
+        'topic': 'education',
+        'icon': 'fa-graduation-cap',
+        'desc': '',
+        'profiles': ['education'],
+    }
+}

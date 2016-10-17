@@ -59,13 +59,13 @@
                     {% block nav_tools %}
                     <div id="menu" class="tool-set clearfix">
                         <div class="tool-group">
-                            <a href="/about">About WAZImap</a>
+                            <a href="/about" {%if about %} class="active"{%endif%}>About WAZImap {{about}}</a>
                         </div>
                         <div class="tool-group">
-                            <a href="/howitworks">How WAZImap Works</a>
+                            <a href="/howitworks" {%if howitworks%} class="active"{%endif%}>How WAZImap Works</a>
                         </div>
                         <div class="tool-group">
-                            <a href="/topics">Topics</a>
+                            <a href="/topics" {%if topics%} class="active"{%endif%}>Topics</a>
                         </div>
                         <div class="tool-group">
                             <a href="/#page-footer">Contact</a>

@@ -81,6 +81,7 @@
 {% endblock %}
 
 {% block content %}
+
 <section class="filters">
     <div class="filter-row">
         <a herf="#"><i>Filter results</i></a>
@@ -106,6 +107,8 @@
     {% endfor %}
     {% endfor %}
 </section>
+
+
 {% comment %}
 <section class="clearfix" id="query-topic-picker">
     <h2>Find data for this place</h2>
@@ -172,6 +175,7 @@
      $('.content-container.wrapper').css('margin-left', (w + 380) + 'px');
      $('.filters').css('margin-left', w + 'px');
      $('.filters').css('display', 'block');
+
      $('.wrapper').css('display', 'block');
      $('#compare-place-select').val('Compare this with another place')
      $('#compare-place-select').focus(function() {

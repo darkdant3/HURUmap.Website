@@ -8,8 +8,16 @@
 {% endblock header_branding %}
 
 {% block footer_content %}
-<div class="column-third">
-    <h1>Useful links</h1>
+
+<div class="column-half">
+    <p>Wazimap, from the Xhosa word ulwazi for knowledge, is a joint project by Media Monitoring Africa and Code for South Africa that provides easy access to South African census and elections data. Read more about who we are and why we built Wazimap.</p>
+    <span>A project by: </span> &nbsp; &nbsp;
+    <a href="https://codeforafrica.org/"><img src="{% static 'img/cfkenya-logo-white.png' %}" style="height: 80px;"></a> &nbsp;  &nbsp;
+    <span style="height: 10px; display: inline-block;">Built on <a href="">Censusreporter.org</a></span>
+</div>
+
+<div class="column-quarter">
+    <span>Useful links</span>
     <ul class="ul-icon-list">
         <li>
             <a href="http://www.knbs.or.ke/" target="_blank">About WAZImap Kenya</a>
@@ -20,8 +28,8 @@
     </ul>
 </div>
 
-<div class="column-third">
-    <h1>Social links</h1>
+<div class="column-quarter">
+    <span>Social links</span>
     <ul class="ul-icon-list">
         <li>
             <i class="fa fa-twitter"></i>
@@ -42,15 +50,4 @@
     </ul>
 </div>
 
-<div class="column-third" style="border-right:none;">
-    <ul class="ul-icon-list">
-        <li>A project by: </li>
-        <li>
-            <br>
-            <a href="https://codeforafrica.org/"><img src="{% static 'img/cfkenya-logo-white.png' %}" style="height: 80px;"></a>
-            <br>
-            <p style="height: 10px; display: inline-block;">Built on <a href="">Censusreporter.org</a></p>
-        </li>
-    </ul>
-</div>
 {% endblock footer_content %}

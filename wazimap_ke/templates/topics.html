@@ -9,68 +9,26 @@
             <div class="snippet">
                 The Census is a big subject and there's a lot to learn, but you don't have to learn it all at once.<br>
                 Here's some help knowing the lay of the land.
+                {{topics}}
             </div>
             <br clear="all">
 
+            {% for key, values in topics %}
             <div class="column-half topics-topic">
-                <i class="fa fa-users" aria-hidden="true"></i>
-                <div class="topic-name">Census 2009</div>
-                <div class="topic-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
+                <i class="fa {{values.icon}}" aria-hidden="true"></i>
+                <div class="topic-name">{{values.topic|title}}</div>
+                <div class="topic-desc">{{values.desc}}</div>
                 <div class="categories">
                     <span>Categories include:</span>
                     <ul>
-                        <li>Demographics</li>
-                        <li>Voter register</li>
-                        <li>Source of water</li>
-                        <li>Source of electricity</li>
+                        {% for cat in values.profiles %}
+                        <li>{{cat|title}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
+            {% endfor %}
 
-            <div class="column-half topics-topic">
-                <i class="fa fa-medkit" aria-hidden="true"></i>
-                <div class="topic-name">Health</div>
-                <div class="topic-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-                <div class="categories">
-                    <span>Categories include:</span>
-                    <ul>
-                        <li>Demographics</li>
-                        <li>Voter register</li>
-                        <li>Source of water</li>
-                        <li>Source of electricity</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="column-half topics-topic">
-                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                <div class="topic-name">Education</div>
-                <div class="topic-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-                <div class="categories">
-                    <span>Categories include:</span>
-                    <ul>
-                        <li>Demographics</li>
-                        <li>Voter register</li>
-                        <li>Source of water</li>
-                        <li>Source of electricity</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="column-half topics-topic">
-                <i class="fa fa-briefcase" aria-hidden="true"></i>
-                <div class="topic-name">Employment</div>
-                <div class="topic-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-                <div class="categories">
-                    <span>Categories include:</span>
-                    <ul>
-                        <li>Demographics</li>
-                        <li>Voter register</li>
-                        <li>Source of water</li>
-                        <li>Source of electricity</li>
-                    </ul>
-                </div>
-            </div>
         </article>
     </section>
 </div>

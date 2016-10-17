@@ -25,22 +25,12 @@
             <h1 class="article-header">Topics </h1>
         </header>
         <section class="card-container clearfix">
+            {% for key, values in topics %}
             <div class="column-quarter topic">
                 <i class="fa fa-users" aria-hidden="true"></i>
                 <div class="topic-name">Census 2009</div>
             </div>
-            <div class="column-quarter topic">
-                <i class="fa fa-medkit" aria-hidden="true"></i>
-                <div class="topic-name">Health</div>
-            </div>
-            <div class="column-quarter topic">
-                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                <div class="topic-name">Education</div>
-            </div>
-            <div class="column-quarter topic">
-                <i class="fa fa-briefcase" aria-hidden="true"></i>
-                <div class="topic-name">Employment</div>
-            </div>
+            {% endfor %}
         </section>
     </article>
 </div>
@@ -73,22 +63,28 @@
 <div class="content-container clearfix showcase">
     <article class="clearfix wrapper">
         <header class="column-full">
-            <h1 class="article-header">Exlpore our Showcase</h1>
+            <h1 class="article-header">Explore our Showcase</h1>
         </header>
         <section>
             <div class="column-third callout with-icon">
-                <img src="{% static 'img/savanna.png' %}"/>
-                <p>Populations and financial figures are broken down by category: Elections, Demographics, Service Delivery, Economics and Education.</p>
+                <img src="{% static 'img/crowds.jpg' %}"/>
+                <h2>The jobless millions</h2>
+                <p>By Frankline Sunday</p>
+                <p>Only one in every five Kenyan youth of working age is employed compared to one in 20 in Uganda and Tanzania. This is three times the rate of unemployment among the youth in Uganda and Tanzania.</p>
                 <center><button>Read more</button></center>
             </div>
             <div class="column-third callout with-icon">
-                <img src="{% static 'img/savanna.png' %}"/>
-                <p>Our library of charts gives you insight into data from the places you research. Look for them on profile pages. You can even <a href="{% url 'example_detail' 'embed-charts' %}">embed the charts</a> on your own site.</p>
+                <img src="{% static 'img/school.jpg' %}"/>
+                <h2>No school, No job?</h2>
+                 <p>By Frankline Sunday</p>
+                <p>Every day, groups of young people can be seen congregating in open spaces in the city and other urban areas which have become known as ‘job corners’.</p>
                 <center><button>Read more</button></center>
             </div>
             <div class="column-third callout with-icon">
-                <img src="{% static 'img/savanna.png' %}"/>
-                <p>Pre-computed statistics are presented alongside each data point, so you can see how each place fits into a larger context.</p>
+                <img src="{% static 'img/money.jpg' %}"/>
+                <h2>The curse of youth unemployment cash</h2>
+                <p>By Frankline Sunday</p>
+                <p>Kenyans have been left reeling as reports emerge of how resources allocated for the empowerment of the huge mass of unemployed youth disappeared ...</p>
                 <center><button>Read more</button></center>
             </div>
         </section>

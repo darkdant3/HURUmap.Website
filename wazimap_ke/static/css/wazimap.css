@@ -45,7 +45,7 @@
     margin: 5px 3px 0px 0px;
 }
 #page-header-title .tool-group {
-    margin-left: 40px;
+    margin-left: 30px;
     margin-top: 20px;
 }
 #page-header-title .tool-group a {
@@ -188,9 +188,6 @@ header.section-contents.table-explorer h1 a {
     text-align:center;
     color: #fff;
 }
-.banner p {
-    font-family: 'Lato', sans-serif;
-}
 #slippy-map {
     width:100%;
 }
@@ -230,7 +227,6 @@ header.section-contents.table-explorer h1 a {
     margin-bottom: 20px;
 }
 .showcase p {
-    font-family: 'Lato', sans-serif;
     color: #084A49;
 }
 .showcase button {
@@ -275,7 +271,6 @@ header.section-contents.table-explorer h1 a {
     text-align:center;
     font-size:18px;
     color: #084A49;
-    font-family: 'Lato' , sans-serif;
 }
 #suggestdata button {
     color: #fff;
@@ -283,7 +278,6 @@ header.section-contents.table-explorer h1 a {
     font-size: 21px;
     padding: 10px;
     border: none;
-    font-family: 'Lato' , sans-serif;
 }
 .profiles-container {
     /**height:600px;
@@ -416,7 +410,38 @@ h2.table-title {
 }
 .filter-row-sub {
     display:none;
+    height: auto;
 }
 .filter-row {
     margin-bottom:10px;
+}
+.content-container {
+    padding: 2.5em 0;
+}
+#page-header .wrapper {
+    padding: 1.0em 0;
+}
+.mid blockquote{
+    font-size:24px;
+    width:50%;
+    float:left;
+    border:none;
+}
+.mid img{
+    float:left;
+}
+.showcase h2 {
+    text-align:center;
+    font-size:22px;
+}
+.article-header-p {
+    text-align:center;
+}
+.howitworks button {
+    color: #fff;
+    background-color: #1f9e95;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 21px;
+    border: none;
 }
