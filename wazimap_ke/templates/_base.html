@@ -51,3 +51,11 @@
 </div>
 
 {% endblock footer_content %}
+
+{% block body_javascript_extra %}
+    <script type="text/javascript">
+    $('#geography-select').click(function() {
+        $(this).val('')
+    });
+    </script>
+{% endblock %}

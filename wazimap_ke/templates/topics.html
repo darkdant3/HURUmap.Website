@@ -9,25 +9,26 @@
             <div class="snippet">
                 The Census is a big subject and there's a lot to learn, but you don't have to learn it all at once.<br>
                 Here's some help knowing the lay of the land.
-                {{topics}}
             </div>
             <br clear="all">
-
-            {% for key, values in topics %}
-            <div class="column-half topics-topic">
-                <i class="fa {{values.icon}}" aria-hidden="true"></i>
-                <div class="topic-name">{{values.topic|title}}</div>
-                <div class="topic-desc">{{values.desc}}</div>
-                <div class="categories">
-                    <span>Categories include:</span>
-                    <ul>
-                        {% for cat in values.profiles %}
-                        <li>{{cat|title}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            {% endfor %}
+            <script type="text/javascript">
+                topics = JSON.parse("{{topics|safe}}".replace(/'/g, '"'));
+                for (k in topics) {
+                    document.write('<div class="column-half topics-topic">');
+                    document.write('<i class="fa '+ topics[k].icon +'" aria-hidden="true"></i>');
+                    document.write('<div class="topic-name">'+ topics[k].topic +'</div>');
+                    document.write('<div class="topic-desc">'+ topics[k].desc +'</div>');
+                    document.write('<div class="categories">');
+                        document.write('<span>Categories include:</span>');
+                        document.write('<ul>');
+                            for (j in topics[k].profiles) {
+                            document.write('<li>'+ topics[k].profiles[j] +'</li>');
+                            }
+                        document.write('</ul>');
+                    document.write('</div>');
+                document.write('</div>');
+                }
+            </script>
 
         </article>
     </section>

@@ -47,12 +47,12 @@ WAZIMAP['topics'] = {
         'icon': 'fa-users',
         'desc': '',
         'profiles': [
-            'demographics',
-            'voter registration',
-            'households',
-            'protests',
-            'school fires',
-            'crime report'
+            'Demographics',
+            'Voter registration',
+            'Households',
+            'Protests',
+            'School fires',
+            'Crime report'
         ]
     },
     'health': {
@@ -60,27 +60,27 @@ WAZIMAP['topics'] = {
         'icon': 'fa-medkit',
         'desc': '',
         'profiles': [
-            'contraceptive use',
-            'maternal care indicators',
-            'knowledge of hiv prevention methods',
+            'Contraceptive use',
+            'Maternal care indicators',
+            'Knowledge of HIV prevention methods',
             'ITN',
-            'fertility',
-            'vaccinations',
-            'type treatment',
-            'nutrition',
-            'health ratios'
+            'Fertility',
+            'Vaccinations',
+            'Type treatment',
+            'Nutrition',
+            'Health ratios'
         ]
      },
     'employment': {
         'topic': 'employment',
         'icon': 'fa-briefcase',
         'desc': '',
-        'profiles': ['employment'],
+        'profiles': ['Employment'],
     },
     'education': {
         'topic': 'education',
         'icon': 'fa-graduation-cap',
         'desc': '',
-        'profiles': ['education'],
+        'profiles': ['Education'],
     }
 }

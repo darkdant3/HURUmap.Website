@@ -45,7 +45,7 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
                 sections.extend(SECTIONS[cat]['profiles'])
 
         for section in sections:
-            function_name = 'get_%s_profile' % section.replace(' ', '_')
+            function_name = 'get_%s_profile' % section.replace(' ', '_').lower()
             if function_name in globals():
                 func = globals()[function_name]
                 data[section] = func(geo_code, geo_level, session)

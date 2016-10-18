@@ -144,6 +144,7 @@
 {% endblock profile_detail %}
 </div>
 
+{% if not compare_view %}
 <br clear="all">
 <!-- suggest a dataset section -->
 <center>
@@ -154,6 +155,7 @@
         </div>
     </article>
 </center>
+{% endif %}
 {% endblock content %}
 
 
@@ -170,12 +172,13 @@
 <script src="{% static 'js/profile_map.js' %}"></script>
 {% endblock %}
 <script>
+    {% if not compare_view %}
      w = $( window ).width() - $( '.content-container.wrapper' ).width() - 380;
      w = Math.round(w/2);
      $('.content-container.wrapper').css('margin-left', (w + 380) + 'px');
      $('.filters').css('margin-left', w + 'px');
      $('.filters').css('display', 'block');
-
+     {% endif %}
      $('.wrapper').css('display', 'block');
      $('#compare-place-select').val('Compare this with another place')
      $('#compare-place-select').focus(function() {
