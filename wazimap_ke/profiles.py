@@ -35,17 +35,19 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
         geo_summary_levels = geo_data.get_summary_geo_info(geo_code, geo_level)
         data = {}
         sections = []
+        selected_sections = []
         if get_params.get('topic'):
             categories = get_params.get('topic').split(',')
             for cat in categories:
-                sections.extend(SECTIONS[cat]['profiles'])
+                selected_sections.extend(SECTIONS[cat]['profiles'])
             data['selected_topics'] = categories
-        else:
-            for cat in SECTIONS:
-                sections.extend(SECTIONS[cat]['profiles'])
+
+        for cat in SECTIONS:
+            sections.extend(SECTIONS[cat]['profiles'])
 
         for section in sections:
-            function_name = 'get_%s_profile' % section.replace(' ', '_').lower()
+            section = section.lower().replace(' ', '_')
+            function_name = 'get_%s_profile' % section
             if function_name in globals():
                 func = globals()[function_name]
                 data[section] = func(geo_code, geo_level, session)
@@ -62,7 +64,9 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
             group_remainder(data['households']['wall_material_distribution'], 5)
 
         data['all_sections'] = SECTIONS
-        #data['selected_sections'] = sections
+        if (selected_sections == []): selected_sections = sections
+        data['raw_selected_sections'] = selected_sections
+        data['selected_sections'] = [x.replace(' ','_').lower() for x in selected_sections]
 
         return data
 
@@ -355,7 +359,7 @@ def get_knowledge_of_hiv_prevention_methods_profile(geo_code, geo_level, session
         'distribution': dist
     }
 
-def get_ITN_profile(geo_code, geo_level, session):
+def get_itn_profile(geo_code, geo_level, session):
     # household possession and use of ITN
     possession_dist, _ = get_stat_data(['household possession of itn'], geo_level, geo_code, session)
 

@@ -1,4 +1,4 @@
-{% extends 'wazimap_base.html' %}
+{% extends '_base.html' %}
 {% load staticfiles %}
 
 {% block header_branding %}
@@ -6,6 +6,10 @@
         <!--<img class="mma-logo" src="{% static 'img/mma.png' %}">-->
     <!--</a>-->
 {% endblock header_branding %}
+
+{% block logo %}
+<img src="{% static 'img/wazimap-kenya-logo.png' %}">
+{% endblock %}
 
 {% block footer_content %}
 

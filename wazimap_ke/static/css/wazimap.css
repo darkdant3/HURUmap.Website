@@ -255,9 +255,9 @@ header.section-contents.table-explorer h1 a {
     margin-bottom:20px;
 }
 #geography-select {
-    height: 35px;
-    border-radius: 0px;
+    border-radius: 4px;
     color: #084A49;
+    margin-top: -5px;
 }
 .search-section {
     margin-top: 10px;
