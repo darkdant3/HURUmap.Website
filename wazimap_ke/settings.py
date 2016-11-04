@@ -43,7 +43,8 @@ WAZIMAP['map_zoom'] = 6
 
 WAZIMAP['topics'] = {
     'census': {
-        'topic': 'census 2009',
+        'topic': 'census',
+        'name': 'census 2009',
         'icon': 'fa-users',
         'desc': '',
         'profiles': [
@@ -52,11 +53,14 @@ WAZIMAP['topics'] = {
             'Households',
             'Protests',
             'School fires',
-            'Crime report'
+            'Crime report',
+            'Education',
+            'Employment',
         ]
     },
     'health': {
         'topic': 'health',
+        'name': 'health',
         'icon': 'fa-medkit',
         'desc': '',
         'profiles': [
@@ -71,16 +75,14 @@ WAZIMAP['topics'] = {
             'Health ratios'
         ]
      },
-    'employment': {
-        'topic': 'employment',
-        'icon': 'fa-briefcase',
+    'agriculture': {
+        'topic': 'agriculture',
+        'name': 'agriculture',
+        'icon': 'fa-leaf',
         'desc': '',
-        'profiles': ['Employment'],
-    },
-    'education': {
-        'topic': 'education',
-        'icon': 'fa-graduation-cap',
-        'desc': '',
-        'profiles': ['Education'],
+        'profiles': [
+            'crop production',
+            'livestock'
+        ],
     }
 }

@@ -28,10 +28,12 @@
         <script>
             topics = JSON.parse("{{topics|safe}}".replace(/'/g, '"'));
             for (k in topics) {
-                document.write ('<div class="column-quarter topic">')
+                document.write ('<a href="/profiles/country-KE-kenya/?topic='+  topics[k].topic  +'">')
+                document.write ('<div class="column-third topic">')
                 document.write ('<i class="fa '+ topics[k].icon +'" aria-hidden="true"></i>');
-                document.write ('<div class="topic-name"> ' + topics[k].topic + '</div>');
+                document.write ('<div class="topic-name"> ' + topics[k].name + '</div>');
                 document.write ('</div>');
+                document.write ('</a>');
             }
         </script>
         </section>

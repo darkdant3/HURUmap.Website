@@ -49,7 +49,7 @@
             <div class="column-third">
                 {% include 'profile/_blocks/_stat_list.html' with stat=education.education_reached_secondary_or_higher stat_type='percentage' %}
             </div>
-            <div class="column-two-thirds" id="chart-histogram-education-education_reached_distribution" data-stat-type="scaled-percentage" data-chart-title="Population by highest education level reached" data-qualifier="Universe: {{ education.education_reached_distribution.metadata.universe }}"></div>
+            <div class="column-two-thirds" id="chart-histogram-education- topics[k].topic " data-stat-type="scaled-percentage" data-chart-title="Population by highest education level reached" data-qualifier="Universe: {{ education.education_reached_distribution.metadata.universe }}"></div>
         </section>
         <section class="clearfix stat-row">
             <h2><a class="permalink" href="#school-attendance" id="school-attendance">School attendance <i class="fa fa-link"></i></a></h2>
@@ -434,5 +434,63 @@
         </section>
     </div>
 </article>
-
+<style>
+    .label {word-break:break-word;}
+</style>
+<article id="crop-production" class="clearfix">
+     <header class="section-contents">
+        <h1>Crop Production</h1>
+    </header>
+    <div class="section-container">
+        <section class="clearfix stat-row">
+            <div class="column-full">
+                <div id="chart-histogram-crop_production-area_dist" data-stat-type="number" data-chart-title="Area in hectares used for crop production"></div>
+            </div>
+        </section>
+        <section class="clearfix stat-row">
+            <div class="column-half">
+                <div id="chart-histogram-crop_production-prod_dist_k" data-stat-type="number" data-chart-title="Crop production (90kg bags)"></div>
+            </div>
+            <div class="column-half">
+                <div id="chart-histogram-crop_production-prod_dist_t" data-stat-type="number" data-chart-title="Crop production (tons)"></div>
+            </div>
+        </section>
+        <section class="clearfix stat-row">
+            <div class="column-full">
+                <div id="chart-histogram-crop_production-yield_dist" data-stat-type="number" data-chart-title="Yield bags per hectare or tons per hectare"></div>
+            </div>
+        </section>
+    </div>
+</article>
+<article id="livestock" class="clearfix">
+     <header class="section-contents">
+        <h1>Livestock</h1>
+    </header>
+    <div class="section-container">
+        <section class="clearfix stat-row">
+            <div class="column-full">
+                <div id="chart-histogram-livestock-pop_dist" data-stat-type="number" data-chart-title="Livestock population"></div>
+            </div>
+        </section>
+        <section class="clearfix stat-row">
+            <div class="column-half" id="chart-pie-livestock-cattle_pop" data-stat-type="number" data-chart-title="Cattle '000"></div>
+            <div class="column-half" id="chart-pie-livestock-goat_pop" data-stat-type="number" data-chart-title="Goat '000"></div>
+        </section>
+        <section class="clearfix stat-row">
+            <div class="column-half" id="chart-pie-livestock-sheep_pop" data-stat-type="number" data-chart-title="Sheep '000"></div>
+            <div class="column-half" id="chart-histogram-livestock-poultry_pop" data-stat-type="number" data-chart-title="Poultry '000"></div>
+        </section>
+         <section class="clearfix stat-row">
+             <div class="column-half">
+                {% include 'profile/_blocks/_stat_list.html' with stat=livestock.hives stat_type='number' %}
+             </div>
+             <div class="column-half" id="chart-pie-livestock-hives_pop" data-stat-type="number" data-chart-title="Hives"></div>
+        </section>
+        <section class="clearfix stat-row">
+            <div class="column-full">
+                <div id="chart-histogram-livestock-prod_dist" data-stat-type="number" data-chart-title="Livestock Products '000"></div>
+            </div>
+        </section>
+    </div>
+</article>
 {% endblock %}
