@@ -1,5 +1,5 @@
 import os
-
+from collections import OrderedDict
 import dj_database_url
 
 # pull in the default wazimap settings
@@ -19,6 +19,7 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 WAZIMAP['name'] = 'WAZImap Kenya'
 WAZIMAP['url'] = 'http://kenya.wazimap.codeforafrica.org'
 WAZIMAP['country_code'] = 'KE'
+WAZIMAP['country_name'] = 'Kenya'
 WAZIMAP['profile_builder'] = 'wazimap_ke.profiles.get_census_profile'
 WAZIMAP['levels'] = {
     'country': {
@@ -41,12 +42,14 @@ WAZIMAP['twitter'] = '@Code4Africa'
 WAZIMAP['map_centre'] = [0.3051933453207569, 37.908818734483155]
 WAZIMAP['map_zoom'] = 6
 
-WAZIMAP['topics'] = {
-    'census': {
+WAZIMAP['topics'] = OrderedDict()
+
+WAZIMAP['topics']['census'] = {
         'topic': 'census',
         'name': 'census 2009',
         'icon': 'fa-users',
-        'desc': '',
+        'order': 1,
+        'desc': 'Census data collected in 2009 provided by the Kenya National Bureau of Statistics',
         'profiles': [
             'Demographics',
             'Voter registration',
@@ -57,12 +60,13 @@ WAZIMAP['topics'] = {
             'Education',
             'Employment',
         ]
-    },
-    'health': {
+    }
+WAZIMAP['topics']['health'] = {
         'topic': 'health',
         'name': 'health',
         'icon': 'fa-medkit',
-        'desc': '',
+        'order': 2,
+        'desc': 'Health data collected in 2014 by the Kenya National Bureau of Statistics ',
         'profiles': [
             'Contraceptive use',
             'Maternal care indicators',
@@ -74,15 +78,16 @@ WAZIMAP['topics'] = {
             'Nutrition',
             'Health ratios'
         ]
-     },
-    'agriculture': {
+     }
+WAZIMAP['topics']['agriculture'] = {
         'topic': 'agriculture',
         'name': 'agriculture',
         'icon': 'fa-leaf',
-        'desc': '',
+        'order': 3,
+        'desc': 'Crop production and Livestock population for the year 2014 provided by the Ministry of Agriculture, Livestock and Fisheries.',
         'profiles': [
-            'crop production',
-            'livestock'
+            'Crop production',
+            'Livestock'
         ],
     }
-}
+

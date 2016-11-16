@@ -52,6 +52,7 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
                 func = globals()[function_name]
                 data[section] = func(geo_code, geo_level, session)
 
+
                 # get profiles for province and/or country
                 for level, code in geo_summary_levels:
                     # merge summary profile into current geo profile
@@ -67,7 +68,7 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
         if (selected_sections == []): selected_sections = sections
         data['raw_selected_sections'] = selected_sections
         data['selected_sections'] = [x.replace(' ','_').lower() for x in selected_sections]
-
+        print data
         return data
 
     finally:
@@ -142,7 +143,8 @@ def get_demographics_profile(geo_code, geo_level, session):
         'total_population': {
             "name": "People",
             "values": {"this": total_pop}
-        }}
+        }
+    }
 
     return final_data
 

@@ -7,9 +7,11 @@
 {% endblock %}
 
 {% block profile_detail %}
+
+
 <article id="demographics" class="clearfix {% if 'demographics' not in selected_sections %}hide{% endif %}">
     <header class="section-contents">
-        <h1></i> Demographics</h1>
+        <h1>Demographics</h1>
     </header>
     <div class="section-container">
 
@@ -49,7 +51,7 @@
             <div class="column-third">
                 {% include 'profile/_blocks/_stat_list.html' with stat=education.education_reached_secondary_or_higher stat_type='percentage' %}
             </div>
-            <div class="column-two-thirds" id="chart-histogram-education- topics[k].topic " data-stat-type="scaled-percentage" data-chart-title="Population by highest education level reached" data-qualifier="Universe: {{ education.education_reached_distribution.metadata.universe }}"></div>
+            <div class="column-two-thirds" id="chart-histogram-education-education_reached_distribution" data-stat-type="scaled-percentage" data-chart-title="Population by highest education level reached" data-qualifier="Universe: {{ education.education_reached_distribution.metadata.universe }}"></div>
         </section>
         <section class="clearfix stat-row">
             <h2><a class="permalink" href="#school-attendance" id="school-attendance">School attendance <i class="fa fa-link"></i></a></h2>
@@ -437,7 +439,7 @@
 <style>
     .label {word-break:break-word;}
 </style>
-<article id="crop-production" class="clearfix">
+<article id="crop_production" class="clearfix">
      <header class="section-contents">
         <h1>Crop Production</h1>
     </header>
