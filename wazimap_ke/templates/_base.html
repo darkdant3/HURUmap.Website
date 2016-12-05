@@ -8,13 +8,13 @@
             <i id="menu-toggle" class="fa fa-bars"></i>
             {% endif %}
             <a class="title" href="{% url 'homepage' %}">
-                <img src="{% static 'img/wazimap-kenya-logo.png' %}">
+                <img src="{% static 'img/wazimap-logo.png' %}">
             </a>
             {% if not hide_nav_tools %}
                 {% block nav_tools %}
                 <div id="menu" class="tool-set clearfix">
                     <div class="tool-group">
-                        <a href="/about" {%if about %} class="active"{%endif%}>About WAZImap {{about}}</a>
+                        <a href="/about" {%if about %} class="active"{%endif%}>About WAZImap</a>
                     </div>
                     <div class="tool-group">
                         <a href="/howitworks" {%if howitworks%} class="active"{%endif%}>How WAZImap Works</a>
