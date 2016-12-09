@@ -68,7 +68,6 @@ def get_census_profile(geo_code, geo_level, get_params,  profile_name=None):
         if (selected_sections == []): selected_sections = sections
         data['raw_selected_sections'] = selected_sections
         data['selected_sections'] = [x.replace(' ','_').lower() for x in selected_sections]
-        print data
         return data
 
     finally:
