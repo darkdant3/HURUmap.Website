@@ -52,8 +52,8 @@
 
 {% block footer_content %}
 
-<div class="column-half">
-    <p>HURUmap is built on <a href="https://wazimap.co.za">WAZImap</a>. <br> Wazimap is from the Xhosa word ulwazi for knowledge, is a joint project by <a href="http://www.mediamonitoringafrica.org/">Media Monitoring Africa</a> and <a href="http://code4sa.org/">Code for South Africa</a> that provides easy access to South African census and elections data. <a href="/about">Read more about why Wazimap was built</a>.</p>
+<div class="column-quarter">
+    <p>HURUmap is built on <a href="https://wazimap.co.za">WAZImap</a>. <br> Wazimap is from the Xhosa word ulwazi for knowledge, is a joint project by <a href="http://www.mediamonitoringafrica.org/">Media Monitoring Africa</a> and <a href="http://code4sa.org/">Code for South Africa</a> that provides easy access to South African census and elections data. <a href="/about">Read more about why Wazimap was built</a>.<br><label>CfT is a project of ICFJ</label></p>
 </div>
 
 <div class="column-quarter">
@@ -78,9 +78,15 @@
     </ul>
 </div>
 
-<div class="column-quarter" style="text-align:center;">
+<div class="column-half" style="text-align:center;">
     <p>A project by: </p>
-    <a href="https://codefortanzania.org/" target="_blank" rel="noopener noreferrer"><img src="{% static 'img/cf-tanzania-logo.png' %}" style="max-width: 170px;"></a>
+    <a href="https://codefortanzania.org/" target="_blank" rel="noopener noreferrer">
+      <img src="{% static 'img/cf-tanzania-logo.png' %}" style="max-width: 200px;">
+    </a>
+    <a href="https://icfj.org/" target="_blank" rel="noreferrer noopener">
+      <img src="{% static 'img/icfj-white.png' %}" style="max-width: 200px;">
+    </a>
+    <br>
 </div>
 <div class="column-full footer-links">
     <a href="/about">About HURUmap</a> | <a href="https://github.com/Code4SA/WAZImap">Built on WAZImap</a> | <a href="https://censusreporter.org">Built on Census Reporter</a>
@@ -108,5 +114,31 @@
                 $('.div-area span').html('Search for a place')
             }
         });
+
+        $('.partners').html('');
+        var partners = '<article class="clearfix wrapper">'+
+          '<section>'+
+                  '<div class="callout column-quarter">'+
+                    '<h3>Partners</h3>'+
+                    '<p>HURUmap has been made possible through support from the following partners:</p>'+
+                  '</div>'+
+                  '<div class="callout with-icon column-quarter">'+
+                    '<a href="https://codeforafrica.org/" target="_blank" rel="noopener noreferrer">'+
+                      '<img src="/static/img/cfafrica-logo-green.png" style="max-height:80px; max-width:100%;">'+
+                    '</a>'+
+                  '</div>'+
+                  '<div class="callout with-icon column-quarter">'+
+                    '<a href="http://datazetu.org" target="_blank" rel="noopener noreferrer">'+
+                      '<img src="/static/img/datazetu.png" style="max-height:80px; max-width:100%;">'+
+                    '</a>'+
+                  '</div>'+
+                  '<div class="callout with-icon column-quarter">'+
+                  '<a href="http://twaweza.or.tz/" target="_blank" rel="noopener noreferrer">'+
+                    '<img src="/static/img/twaweza-green.png" style="max-height:80px; max-width:100%;">'+
+                  '</a>'+
+                  '</div>'+
+                '</section>'+
+              '</article>';
+          $('.partners').html(partners);
     </script>
 {% endblock %}
